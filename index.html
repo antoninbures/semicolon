@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budujeme značky zaměstnavatele, které přináší talenty i zisk</title>
+    <meta name="title" content="Budujeme značky zaměstnavatele, které přináší talenty i zisk">
+    <meta name="description" content="Skvělý employer branding odlišuje firmu od konkurence, přináší CVs, snižuje fluktuaci a šetří firmě peníze. Je to investice, která se vrací i v číslech.">
+    <style>
+        @font-face {
+            font-family: 'ADA Hybrid';
+            src: url('fonts/ADAHybrid-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'ADA Hybrid', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #023B00;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .crane-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 3rem auto;
+            opacity: 0.9;
+        }
+
+        .crane-svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: white;
+        }
+
+        .main-text {
+            color: #24E41E;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            color: #B3FFB0;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 2rem;
+        }
+
+        .linkedin-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .linkedin-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            height: 64px;
+            min-width: 200px;
+            background-color: #24E41E;
+            border-radius: 32px;
+            padding: 0 24px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .linkedin-button:hover {
+            background-color: #B3FFB0;
+        }
+
+        .linkedin-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #1b221b;
+        }
+
+        .linkedin-text {
+            font-size: 1.1rem;
+            color: #1b221b;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .logo {
+            position: absolute;
+            top: -20px;
+            right: 40px;
+            width: 60px;
+            height: 198px;
+            z-index: 1;
+        }
+
+        .logo svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .crane-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 2rem;
+            }
+
+            .main-text {
+                font-size: clamp(1.2rem, 6vw, 1.8rem);
+            }
+
+            .linkedin-button {
+                height: 56px;
+                padding: 0 20px;
+            }
+
+
+            .linkedin-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 42px;
+                height: 138px;
+            }
+            .main-text {
+                font-size: clamp(1rem, 8vw, 1.5rem);
+            }
+
+            .linkedin-text {
+                font-size: 1rem;
+            }
+
+
+            .linkedin-icon {
+                width: 18px;
+                height: 18px;
+                font-size: 9px;
+            }
+
+            .linkedin-text {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animation for the crane */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .crane-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Subtle background pattern */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(36, 228, 30, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(179, 255, 176, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <svg width="232" height="765" viewBox="0 0 232 765" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M204.167 322.086C210.917 322.086 216.813 324.617 221.854 329.669C226.906 334.726 229.437 340.622 229.438 347.356V635.461C229.437 672.529 217.219 703.279 192.792 727.711C168.36 752.138 137.615 764.356 100.562 764.356H27.2705C20.5311 764.356 14.635 761.825 9.58301 756.773C4.52582 751.716 2.00003 745.82 2 739.086V688.544C2.00005 681.804 4.52581 675.908 9.58301 670.856C14.635 665.799 20.5311 663.274 27.2705 663.273H76.542C111.083 663.273 128.354 646.002 128.354 611.461V574.815C128.354 568.076 125.823 562.18 120.771 557.128C115.713 552.071 109.817 549.544 103.083 549.544H27.2705C20.5311 549.544 14.635 547.018 9.58301 541.961C4.52581 536.909 2.00003 531.013 2 524.273V347.356C2.00005 340.622 4.52581 334.726 9.58301 329.669C14.635 324.617 20.5311 322.086 27.2705 322.086H204.167ZM204.188 0.369141C210.922 0.369141 216.818 2.90104 221.875 7.95312C226.927 13.0104 229.458 18.9063 229.458 25.6406V202.558C229.458 209.297 226.927 215.193 221.875 220.245C216.818 225.302 210.922 227.828 204.188 227.828H27.2705C20.5311 227.828 14.635 225.302 9.58301 220.245C4.52584 215.193 2.00012 209.297 2 202.558V25.6406C2 18.9064 4.52588 13.0104 9.58301 7.95312C14.635 2.90112 20.5311 0.369222 27.2705 0.369141H204.188Z" fill="#24E41E"/>
+        </svg>
+    </div>
+    
+    <div class="container">
+        <div class="crane-icon">
+            <!--
+            tags: [construction, stop, traffic, barricade, street]
+            version: "1.54"
+            unicode: "f00e"
+            -->
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="crane-svg"
+            >
+            <path d="M4 7m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v7a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z" />
+            <path d="M7 16v4" />
+            <path d="M7.5 16l9 -9" />
+            <path d="M13.5 16l6.5 -6.5" />
+            <path d="M4 13.5l6.5 -6.5" />
+            <path d="M17 16v4" />
+            <path d="M5 20h4" />
+            <path d="M15 20h4" />
+            <path d="M17 7v-2" />
+            <path d="M7 7v-2" />
+            </svg>
+
+        </div>
+
+        <h1 class="main-text">
+            Právě tvoříme web;<br>
+            stejně jako skvělé značky zaměstnavatelů.<br>
+            
+        </h1>
+        <p>Mezitím nás najdete na LinkedInu.</p>
+
+        <div class="linkedin-section">
+            <a href="https://www.linkedin.com/company/studiosemicolon/" class="linkedin-button" target="_blank" rel="noopener noreferrer">
+                <div class="linkedin-icon"><!--
+                    tags: [logo, website, corporation, work, business, internet]
+                    category: Brand
+                    version: "1.15"
+                    unicode: "ec8c"
+                    -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                      <path d="M8 11l0 5" />
+                      <path d="M8 8l0 .01" />
+                      <path d="M12 16l0 -5" />
+                      <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+                    </svg>
+                    </div>
+                <div class="linkedin-text">LinkedIn</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
